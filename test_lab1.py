@@ -2,26 +2,26 @@ import pytest
 import main
 import os.path
 
-def TestDatabase():
+def test_database():
     
     assert os.path.exists(main.name_database) == True
 
-def RowCountClients():
+def test_rowcountclients():
 
     assert len(main.CLIENTS.select()) == 10
 
-def RowCountOrders():
+def test_rowrountorders():
    
     assert len(main.ORDERS.select()) == 10
 
-def TestCollumnClients():
+def test_testcollumnclients():
    
     try:
         x = main.CLIENTS.select(main.CLIENTS.ID,main.CLIENTS.NAME,main.CLIENTS.CITY, main.CLIENTS.ADDRESS)
     except:
         assert False
 
-def TestCollOdders():
+def test_testcollodders():
     
     try:
         x = main.ORDERS.select(main.ORDERS.ID,main.ORDERS.CLIENT_id,main.ORDERS.DATE, main.ORDERS.AMOUNT,main.ORDERS.DESCRIPTION)
