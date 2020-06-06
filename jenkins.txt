@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages {
+        stage("Step") {
+            steps {
+                sh 'python3 main.py init'
+                sh 'python3 main.py fill'
+                sh 'python3 -m pytest -v --junitxml=Test.xml'
+				junit 'Test.xml'
+            }
+        }
+    }
+}
