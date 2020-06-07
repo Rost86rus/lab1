@@ -10,4 +10,4 @@ with configure_scope() as scope:
     scope.set_tag("Sentry","Lab_6")
     scope.set_tag("Author","Egovcev Rostislav")
 
-division_by_zero = 1 / 0
+d = 1 / 0
